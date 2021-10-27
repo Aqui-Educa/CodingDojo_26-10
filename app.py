@@ -11,10 +11,12 @@ def obterCadastro():
 
 @app.route('/cadastrarUsuario', methods=['POST'])
 def cadastrarUsuario():
+
     with open ("cadastro.csv", 'w', encoding="UTF-8", newline="") as cad:
+        
         write = csv.writer(cad, delimiter=',')
         usuario = request.json
-        
-
-
-        return usuario
+        user = [usuario["id"], usuario["nome"], usuario["cpf"], usuario["telefone"], usuario["email"], usuario["vaga"], usuario["endereco"]]
+        write. writerow(user)
+    
+    return "Cadastro realizado com sucesso!"

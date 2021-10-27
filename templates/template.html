@@ -10,7 +10,7 @@
 
 <body>
   <div>
-    <form>
+    <form method="POST" action="/cadastrarUsuario">
       <label>Id:</label>
       <input type="text" id="id" required>
       <br>
@@ -61,7 +61,7 @@
 
         //Enviando para a API o json 
         //construído na etapa anterior
-        fetch('http://127.0.0.1:5000/inserir',
+        fetch('http://127.0.0.1:5000/cadastrarUsuario',
         {
             headers: {
                 'Accept': 'application/json',
