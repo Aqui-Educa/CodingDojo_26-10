@@ -13,14 +13,16 @@ def obterCadastro():
 def cadastrarUsuario():
 
     usuario = request.json
-    with open ("cadastro.csv", 'a', encoding="UTF-8", newline="") as cad:
-        
+    with open("cadastro.csv", 'a', encoding="UTF-8", newline="") as cad:
+
         write = csv.writer(cad, delimiter=';')
 
         print(usuario)
-        user = [usuario['id'], usuario['nome'], usuario['cpf'], usuario['telefone'], usuario['email'], usuario['vaga'], usuario['endereco']]
+        user = [usuario['id'], usuario['nome'], usuario['cpf'], usuario['telefone'],
+                usuario['email'], usuario['vaga'], usuario['endereco']]
+        print(usuario)
         print(user)
 
-        write. writerow(user)
-    
+        write.writerow(user)
+
     return "Cadastro realizado com sucesso!"
